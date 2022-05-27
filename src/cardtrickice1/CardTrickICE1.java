@@ -1,15 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Gopika Kalathiya
+ * Student ID: 991659883
  */
 package cardtrickice1;
 
+import java.util.Scanner;
+
 /** step1 : generate 7 random cards and store in array - how
  * step 2: take any card input from user suit,number
- * step 3: user card is in  the array 'card is found'
- *
- * @author sivagamasrinivasan,May 23rd
+ * step 3: user card is in  the array 'card is found
+ * 
+ * 
+ * @author Gopika Kalathiya
  */
 public class CardTrickICE1 {
 
@@ -22,12 +24,33 @@ public class CardTrickICE1 {
         for( int i=0;i<magicHand.length;i++)
         {
             Card c1 = new Card();
-            c1.setValue(2);//use a method to generate random *13
-            c1.setSuits("hearts");//random method suit 
+            c1.setValue(c1.cardNumber());//use a method to generate random *13
+            c1.setSuits(c1.suits());//random method suit 
+            magicHand[i]=c1;
         }
-        //step 2:take input 
+        for(int i=0;i<magicHand.length;i++)
+            System.out.println(magicHand[i]);
         
-        //step 3: match with array 
+        
+        //Take input from scanner
+        
+        Scanner sc = new Scanner(System.in);
+        int cardNum = sc.nextInt();
+        String suitName = sc.next();
+             
+        
+        //step 3: match with array
+        
+       linearSearch(magicHand,cardNum,suitName);
     }
-    
+    public static void linearSearch(Card[] list,int numKey,String suitKey){
+        for (Card list1 : list) {
+            if (numKey == list1.getValue()) {
+                if (suitKey.equals(list1.getSuits())) {
+                    System.out.println("card found");
+                    break;
+                }
+            }
+        }
+    }
 }
