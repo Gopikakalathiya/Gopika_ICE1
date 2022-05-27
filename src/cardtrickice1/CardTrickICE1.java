@@ -22,10 +22,6 @@ public class CardTrickICE1 {
     {
         Card[] magicHand = new Card[7]; //Array of object
         
-        Card luckyCard = new Card();
-        luckyCard.setValue(1);
-        luckyCard.setSuits("spades");
-        magicHand[0] = luckyCard;
         
         for( int i=0;i<magicHand.length;i++)
         {
