@@ -41,7 +41,9 @@ public class CardTrickICE1 {
         //Take input from scanner
         
         Scanner sc = new Scanner(System.in);
+        System.out.println("Please choose any number between 1 to 13:: ");
         int cardNum = sc.nextInt();
+        System.out.println("PLease choose the suit:: \nhearts \nspades \ndiamonds \nclubs");
         String suitName = sc.next();
            
         
@@ -56,6 +58,9 @@ public class CardTrickICE1 {
                 if (suitKey.equals(list1.getSuits())) {
                     System.out.println("card found");
                     break;
+                }
+                else{
+                    System.out.println("Card not found");
                 }
             }
         }
